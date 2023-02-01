@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +16,22 @@ public class Cat : MonoBehaviour
     {
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(pos.x, transform.position.y);
+        FlipCat(pos);
     }
-
+    
+    private float oldX = 0f;
+    
+    void FlipCat(Vector2 pos)
+    {
+        if(oldX < pos.x){
+             GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if(oldX > pos.x){
+             GetComponent<SpriteRenderer>().flipX = false;
+        }
+        
+        oldX = pos.x;
+    }
     void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.tag == "Diamond") {
             Destroy(col.gameObject);
