@@ -33,7 +33,7 @@ public class Cat : MonoBehaviour
         oldX = pos.x;
     }
     void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.tag == "Diamond") {
+        if (col.gameObject.tag == "diamond") {
             Destroy(col.gameObject);
             //method to increase score
         }
