@@ -7,7 +7,7 @@ public class falling : MonoBehaviour
     //sprite prefab
     public GameObject diamondPrefab;
 
-    public float moveSpeed = 0.07f;
+    public float moveSpeed = 0.08f;
     
     // Start is called before the first frame update
     void Start()
@@ -26,12 +26,12 @@ public class falling : MonoBehaviour
 
     // thanks to https://answers.unity.com/questions/1850275/how-to-create-object-falling-from-sky-continuously.html
     IEnumerator spawner(){
-      while (true){
-        float randomPosition = Random.Range(-8.5f,8.5f);
-        yield return new WaitForSeconds(1.5f); // WAIT
+      
+      float randomPosition = Random.Range(-8.5f,8.5f);
+      yield return new WaitForSeconds(0.35f); // WAIT
 
-        Instantiate(diamondPrefab,new Vector3(randomPosition,4f,transform.position.z),Quaternion.identity);
-      }
+      Instantiate(diamondPrefab,new Vector3(randomPosition,4f,transform.position.z),Quaternion.identity);
+      
     }
 
     IEnumerator Timeout()

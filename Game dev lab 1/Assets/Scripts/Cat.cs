@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +34,7 @@ public class Cat : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.tag == "diamond") {
+
             Destroy(col.gameObject);
             //method to increase score
         }
