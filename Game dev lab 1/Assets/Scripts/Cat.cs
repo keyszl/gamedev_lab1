@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-<<<<<<< Updated upstream
-
-=======
-    GameObject GameManager;
->>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
@@ -37,15 +32,10 @@ public class Cat : MonoBehaviour
         oldX = pos.x;
     }
     void OnTriggerEnter2D(Collider2D col){
-<<<<<<< Updated upstream
         if (col.gameObject.tag == "diamond") {
-
-=======
-        if (col.gameObject.tag == "Diamond") {
->>>>>>> Stashed changes
             Destroy(col.gameObject);
             //method to increase score
-            GameManager.IncScore();
+            GameManager.Instance.IncScore();
         }
     }
 }

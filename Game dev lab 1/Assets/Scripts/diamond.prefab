@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diamondPrefab: {fileID: 1761029063698042530}
+  moveSpeed: 0.07
 --- !u!50 &2777560663008141766
 Rigidbody2D:
   serializedVersion: 4
