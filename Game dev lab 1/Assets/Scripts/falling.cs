@@ -14,24 +14,19 @@ public class falling : MonoBehaviour
     {
       StartCoroutine(spawner());
       StartCoroutine(Timeout());
-      
     }
 
     void FixedUpdate()
-    {
-        
+    {   
       transform.Translate(0,-moveSpeed,0);
-
     }
 
     // thanks to https://answers.unity.com/questions/1850275/how-to-create-object-falling-from-sky-continuously.html
-    IEnumerator spawner(){
-      
+    IEnumerator spawner(){  
       float randomPosition = Random.Range(-8.5f,8.5f);
       yield return new WaitForSeconds(0.35f); // WAIT
 
-      Instantiate(diamondPrefab,new Vector3(randomPosition,4f,transform.position.z),Quaternion.identity);
-      
+      Instantiate(diamondPrefab,new Vector3(randomPosition,5.1f,transform.position.z),Quaternion.identity);    
     }
 
     IEnumerator Timeout()
